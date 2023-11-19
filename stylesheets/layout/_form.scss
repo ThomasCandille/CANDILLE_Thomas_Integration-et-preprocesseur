@@ -1,0 +1,168 @@
+.container{
+
+  &-form{
+
+    width: 100vw;
+    height: 100vh;
+    
+    background-image: url("../../img/61842.png");
+
+    @include flex(center, center, false, row);
+
+    &-img{
+      width: 40vw;
+
+      margin-inline: 5vw;
+
+      >img{
+        height: 100%;
+        width: 100%;
+      }
+
+    }
+
+    &-all{
+      margin-inline: 5vw;
+
+      height: 80vh;
+      width: 50vw;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 2fr 3fr 1fr; ;
+
+      &-text{
+        grid-column: 1/3;
+        grid-row: 1/2;
+
+        padding: 2vh 2vw;
+
+        >.form-title-text{
+          @include font-settings(3vw, 800, $text-color-alternate, $font-family);
+          margin-bottom: 6vh;
+        }
+
+        >.description-text{
+          @include font-settings(1.4vw, 300, $text-color-2, $font-family);
+          line-height: 3vh;
+          margin-bottom: 8vh;
+        }
+
+      }
+
+      &-form{
+        
+        grid-column: 1/3;
+
+        height: 50vh;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 3fr;
+        gap: 2vh 2vw; 
+
+        >.form-nom{
+          height: 5vh;
+          grid-row: 1/2;
+          grid-column: 1/2;
+
+          >.form-text{
+            @include font-settings(1.5vw, 500, $text-color-alternate, $font-family);
+            font-style: italic;
+            margin-bottom: 0.5vh;
+          }
+
+          >textarea{
+            width: 100%;
+          };
+        }
+        
+        >.form-prenom{
+          height: 5vh;
+          grid-row: 1/2;
+          grid-column: 2/3;
+
+          >.form-text{
+            @include font-settings(1.5vw, 500, $text-color-alternate, $font-family);
+            font-style: italic;
+            margin-bottom: 0.5vh;
+          }
+
+          >textarea{
+            width: 100%;
+          };
+        }
+
+        >.form-email{
+          height: 5vh;
+          grid-row: 2/3;
+          grid-column: 1/3;
+
+          >.form-text{
+            @include font-settings(1.5vw, 500, $text-color-alternate, $font-family);
+            font-style: italic;
+            margin-bottom: 0.5vh;
+          }
+
+          >textarea{
+            width: 100%;
+          };
+        }
+
+        >.form-avis{
+          height: 20vh;
+          grid-row: 3/4;
+          grid-column: 1/3;
+
+          >.form-text{
+            @include font-settings(1.5vw, 500, $text-color-alternate, $font-family);
+            font-style: italic;
+            margin-bottom: 0.5vh;
+          }
+
+          >textarea{
+            width: 100%;
+            height: 100%;
+          };
+        }
+
+      }
+
+      &-button{
+
+        grid-column: 1/3;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        >button{
+          @include font-settings(1.5vw, 600, $text-color, $font-family);
+          width: 15vw;
+          height: 6vh;
+          background-color: $text-color-alternate;
+          border-radius: 5px;
+          border: none;
+          cursor: pointer;
+
+          &:hover{
+            background-color: $text-color;
+            color: $text-color-alternate;
+            border: 2px solid $text-color-2;
+          }
+        }
+      }
+
+    }
+
+  }
+
+}
+
+@media screen and  (max-width: 768px){
+
+  .container-form-img{
+    display: none;
+  }
+  
+}
